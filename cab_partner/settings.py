@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'patients.apps.CapPartnerConfig',
+    'clients.apps.ClientsConfig',
+    'probes.apps.ProbesConfig',
+    'orders.apps.OrdersConfig',
     'crispy_forms',
     'crispy_bootstrap4',
 ]
