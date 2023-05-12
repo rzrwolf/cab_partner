@@ -12,4 +12,5 @@ def logoutView(request):
 
 
 def dashboard(request):
-    return render(request, 'index.html')
+
+    return render(request, 'main.html')

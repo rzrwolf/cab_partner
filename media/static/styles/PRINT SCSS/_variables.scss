@@ -1,0 +1,60 @@
+$blue_primary: #2057b2;
+
+$green_primary: #257b24;
+$green_secondary:#59bd5f;
+
+$gray_text_normal: #4a4a4adb;
+$gray_text_light: #a8a8a8;
+
+$shadow_light: #ccc;
+$shadow_dark: #4a4a4a94;
+
+$border_light: #a8a8a8;
+$border_lighter: #a8a8a8a8;
+$border_verylight: #cccccc36;
+
+$background_light: #fafafa;
+$background_normal: #f2f4f8;  //similart - whitesmoke
+$background_verylight: #e8e8e8;
+
+$hover_selection: #c2d2ff8c;
+
+%blue_gradient {
+  background: -webkit-linear-gradient(rgba(56, 172, 231, 1) 0%,
+      rgba(104, 181, 239, 1) 100%);
+  background: -o-linear-gradient(rgba(56, 172, 231, 1) 0%,
+      rgba(104, 181, 239, 1) 100%);
+  background: linear-gradient(rgba(56, 172, 231, 1) 0%,
+      rgba(104, 181, 239, 1) 100%);
+}
+
+%standard-transition {
+  transition: box-shadow 0.3s;
+}
+
+%border-shadow-round {
+  transition: box-shadow 0.3s;
+  box-shadow: 0 -2px 18px -3px $shadow_light;
+  background-color: white;
+  border: 1px solid $border_light;
+  border-radius: 8px;
+}
+
+
+
+
+%standard-hoverscale {
+  border: 1px solid #2057b2;
+  transform: scale(1.025);
+  box-shadow: 0 0 10px 2px $shadow_dark;
+}
+
+@mixin headings {
+  h1,h2,h3,h4,h5,h6 {
+    @content;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  @extend %headings !optional;
+}

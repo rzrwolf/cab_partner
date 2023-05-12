@@ -1,0 +1,85 @@
+{% load template_tags %}
+
+{% define request.resolver_match.url_name as url %}
+<div class="d-flex flex-wrap flex-md-nowrap align-items-center pb-2 mb-2 border-bottom">
+    {% if url == "patients-board" %}
+
+        <a href="{% url 'create-patient' 0 0 %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Создать пациента </a>
+        &emsp; Фильтр:&nbsp
+        <div class="btn-group mr-2">
+            <a href="{% url url %}?date=today" class="btn btn-outline-secondary" role="button">
+                <i class="bi bi-calendar-check"></i> Сегодня </a>
+            <a href="{% url url %}?date=yesterday" class="btn btn-outline-secondary" role="button">
+                <i class="bi bi-calendar-check"></i> Вчера </a>
+            <a href="{% url url %}?date=week" class="btn btn-outline-secondary" role="button">
+                <i class="bi bi-calendar-check"></i> Неделя </a>
+            <a href="{% url url %}?date=month" class="btn btn-outline-secondary" role="button">
+                <i class="bi bi-calendar-check"></i> Месяц </a>
+            <a href="{% url url %}?date=all" class="btn btn-outline-secondary" role="button">
+                <i class="bi bi-calendar-check"></i> Все </a>
+        </div>
+
+    {% elif url == "analiz-board" or url == "visits-board" %}
+        <div class="btn-group mr-2">
+            <a href="{% url url %}?date=today" class="btn btn btn-outline-secondary" role="button">
+                <i class="bi bi-calendar-check"></i> Сегодня </a>
+            <a href="{% url url %}?date=yesterday" class="btn btn btn-outline-secondary" role="button">
+                <i class="bi bi-calendar-check"></i> Вчера </a>
+            <a href="{% url url %}?date=week" class="btn btn btn-outline-secondary" role="button">
+                <i class="bi bi-calendar-check"></i> Неделя </a>
+            <a href="{% url url %}?date=month" class="btn btn btn-outline-secondary" role="button">
+                <i class="bi bi-calendar-check"></i> Месяц </a>
+            <a href="{% url url %}?date=all" class="btn btn btn-outline-secondary" role="button">
+                <i class="bi bi-calendar-check"></i> Все </a>
+        </div>
+
+    {% elif url == "single-patient" %}
+        <a href="{% url 'create-visit' patientid %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Создать визит </a>
+
+    {% elif url == "analiz" %}
+        <a href="{% url 'create-analiz' %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Добавить анализ </a>
+
+    {% elif url == 'all-probes' %}
+        <a href="{% url 'create-probe' %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Добавить тест </a>
+        <a href="{% url 'create-probegroup' %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Добавить группу </a>
+
+    {% elif url == 'measurement' %}
+        <a href="{% url 'create-measurement' %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Добавить измерение </a>
+
+    {% elif url == 'references' %}
+        <a href="{% url 'create-refgroup' %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Добавить группу </a>
+
+    {% elif url == 'devices' %}
+        <a href="{% url 'create-device' %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Добавить анализатор </a>
+
+    {% elif url == 'analiz-single' %}
+        <a href="{% url 'create-probe' %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Добавить тест </a>
+
+    {% elif url == 'dictionaries' %}
+        <a href="{% url 'create-dict' %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Добавить словарь </a>
+
+        <a href="{% url 'create-dict-item' %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Добавить слова </a>
+    {% elif url == 'codes' %}
+        <a href="{% url 'create-code' %}" class="btn btn-outline-success" role="button">
+            <i class="bi bi-plus-circle"></i> Добавить код </a>
+
+    {% endif %}
+    <div class="ml-auto">
+        <form class="form-inline my-2 my-lg-0 ">
+            <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Искать" disabled>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" disabled>Искать</button>
+        </form>
+    </div>
+</div>
+

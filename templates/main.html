@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-icons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bundle.css' %}">
+    <script type = "text/javascript" src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script type = "text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script type = "text/javascript" src="{% static 'js/selectall.js' %}"></script>
+<link rel="shortcut icon" type="image/png" href="{% static '/favicon.ico' %}"/>
+    <title>{% block title %} WEB LIS {% endblock %}</title>
+
+</head>
+<body>
+
+{% include 'topbar.html' %}
+
+<div class="container-fluid">
+    <div class="row">
+        {% include 'leftbar.html' %}
+
+        <main role="main" class="col-md-10-5 ml-sm-auto col-lg-10-5 pt-2 px-2 pb-4">
+
+                {% block content %}
+
+                {% endblock content %}
+           </main>
+    </div>
+</div>
+
+
+<!-- Icons -->
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
+
+
+</body>
+
+</html>

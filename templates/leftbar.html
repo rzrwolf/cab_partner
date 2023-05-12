@@ -1,0 +1,85 @@
+<nav class="col-md-1-5 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            {% with request.resolver_match.url_name as link %}
+                <li class="nav-item">
+                    <a class="nav-link {% if link == 'home' %}active{% endif %}" href="">
+                        <span data-feather="home"></span>Главная <span class="sr-only">(current)</span></a>
+                </li>
+                <hr class="menu">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-1 mb-1 text-muted">
+                    <span>Работа с заявками</span>
+                </h6>
+                <li class="nav-item">
+                    <a class="nav-link {% if link == 'patients-board' %}active{% endif %}" href="">
+                        <span data-feather="users"></span>Пациенты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if link == 'visits-board' %}active{% endif %}" href="">
+                        <span data-feather="shopping-cart"></span>Визиты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if link == 'analiz-board' %}active{% endif %}" href="">
+                        <span data-feather="file"></span>Анализы</a>
+                </li>
+                <hr class="menu">
+
+                <li class="nav-item">
+                    <a class="nav-link {% if link == 'companies' %}active{% endif %}" href="">
+                        <span data-feather="briefcase"></span>Компании</a>
+                </li>
+                <hr class="menu">
+                </ul>
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-1 mb-1 text-muted">
+                    <span>Настройки</span>
+
+                </h6>
+                <ul class="nav flex-column mb-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <span data-feather="file-text"></span>
+                        Анализы
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <span data-feather="file-text"></span>
+                        Тесты
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <span data-feather="file-text"></span>
+                        Коды
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <span data-feather="file-text"></span>
+                        Референсы
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <span data-feather="file-text"></span>
+                        Измерения
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <span data-feather="file-text"></span>
+                        Словари
+                    </a>
+                </li>
+                <hr class="menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <span data-feather="file-text"></span>
+                        Анализаторы
+                    </a>
+                </li>
+            {% endwith %}
+            </ul>
+    </div>
+</nav>
