@@ -11,12 +11,12 @@
                     <span>Работа с заявками</span>
                 </h6>
                 <li class="nav-item">
-                    <a class="nav-link {% if link == 'patients-board' %}active{% endif %}" href="">
-                        <span data-feather="users"></span>Пациенты</a>
+                    <a class="nav-link {% if link == 'orders' %}active{% endif %}" href="{% url 'orders' %}">
+                        <span data-feather="shopping-cart"></span>Заявки</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if link == 'visits-board' %}active{% endif %}" href="">
-                        <span data-feather="shopping-cart"></span>Визиты</a>
+                        <span data-feather="users"></span>Пациенты</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if link == 'analiz-board' %}active{% endif %}" href="">
